@@ -16,21 +16,15 @@ public class SeparateNumber {
 					sb.append(s.charAt(i));
 					i++;
 				}
-				sb.append(s.charAt(i));
-				
 			} else if (i + 1 < s.length() && s.charAt(i+1) == s.charAt(i) - 1) {
 				while (i + 1 < s.length() && s.charAt(i+1) == s.charAt(i) - 1) {
 					sb.append(s.charAt(i));
 					i++;
 				}
-				sb.append(s.charAt(i));
-				
-			} else {
-				sb.append(s.charAt(i));
 			}
+			sb.append(s.charAt(i));
 			sb.append(";");
 		}
-		
 		return sb.toString();
 	}
 }
