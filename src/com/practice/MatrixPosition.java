@@ -11,6 +11,7 @@ public class MatrixPosition {
 				{7,8,9}
 		};
 		findPosition(matrix);
+		
 	}
 	
 	public static void findPosition(int[][] matrix) {
