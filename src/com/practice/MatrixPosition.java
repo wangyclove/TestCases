@@ -13,7 +13,7 @@ the number is 3 and position (1,3)
  */
 
 public class MatrixPosition {
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		
 	}
 	
