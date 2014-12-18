@@ -6,7 +6,8 @@ import java.util.Arrays;
 public class LargestSumSubArray {
 	public static void main(String[] args) {
 		int[] sample = {1, -2, 3, 5, -1, 6};	
-		int[] result = findLargestSumSubArrayIn(sample);
+		//int[] result = findLargestSumSubArrayIn(sample);
+		int[] result = getLargestSumSubArray(sample);
 		System.out.println(Arrays.toString(result));
 	}
 	
@@ -43,5 +44,35 @@ public class LargestSumSubArray {
 		return result;
 	}
 	
-	
+	public static int[] getLargestSumSubArray(int[] input) {
+		int[] max = new int[input.length];
+		max[0] = Integer.MIN_VALUE;
+
+		for (int i = 1; i < input.length; i++) {
+			if (input[i - 1] > max[i - 1]) {
+				max[i] = input[i] + input[i - 1];
+			} else {
+				max[i] = input[i] + max[i - 1];
+			}
+		}
+
+		int maxPos = 0;
+		for (int i = 1; i < input.length; i++) {
+			if (max[maxPos] < max[i]) {
+				maxPos = i;
+			}
+		}
+
+		int startPoint = maxPos;
+		while (max[maxPos] != 0) {
+			max[maxPos] -= input[startPoint--];
+		}
+
+		int[] result = new int[maxPos - startPoint];
+		for (int i = startPoint + 1; i <= maxPos; i++) {
+			result[i - startPoint - 1] = input[i];
+		}
+
+		return result;
+	} 
 }

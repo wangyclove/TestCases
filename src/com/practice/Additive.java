@@ -3,7 +3,7 @@ package com.practice;
 
 public class Additive {
 	public static void main(String[] args) {
-		int testNumber = 6666132;
+		int testNumber = 33003333;
 		boolean result = isAdditive(testNumber);
 		if (result) {
 			System.out.println(testNumber + " is an Additive Number");
