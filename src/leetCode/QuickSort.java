@@ -20,7 +20,7 @@ public class QuickSort {
 			}
 			System.out.print("Before sort: ");
 			print(array);
-			QuickSort.sort(array);
+			QuickSort.sort(array, 0, array.length - 1);
 			System.out.print("After sort: ");
 			print(array);
 		}
@@ -40,16 +40,35 @@ public class QuickSort {
 		System.out.println("]");
 	}
 	
-	public static void sort(int[] array) {
-		if(array == null || array.length <= 1) {
+	public static void sort(int[] array, int start, int end) {
+		if(array == null || start >= end) {
 			return;
 		}
-		sort(array, 0, array.length - 1);
+		int mid = partition(array, start, end);
+		sort(array, start, mid - 1);
+		sort(array, mid, end);
 	}
 	
-	private static void sort(int[] array, int start, int end) {
-		while(start <= end) {
-			
+	private static int partition(int[] array, int start, int end) {
+		int pivot = array[start];
+		int i = start;
+		int j = end;
+		while(i <= j) {
+			while (i <= j && array[i] < pivot) {
+				i++;
+			}
+			while (j >= i && array[j] > pivot) {
+				j--;
+			}
+			if (i <= j) {
+				int temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+				i++;
+				j--;
+			}
 		}
+		
+		return i;
 	}
 }

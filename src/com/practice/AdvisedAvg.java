@@ -31,17 +31,22 @@ public class AdvisedAvg {
 					}
 					max[2] = temp;
 					System.out.println(Arrays.toString(max));
-				}
-				if (max[2] > max[1]) {
-					//swap max 1,2
-					swap(max, 1, 2);
+					if (max[2] > max[1]) {
+						//swap max 1,2
+						swap(max, 1, 2);
+						System.out.println(Arrays.toString(max));
+					}
+					if (max[1] > max[0]) {
+						//swap max 0,1
+						swap(max, 0, 1);
+					}
 					System.out.println(Arrays.toString(max));
+				} else {
+					sum += temp;
+					count++;
+					System.out.println("count: " + count);
 				}
-				if (max[1] > max[0]) {
-					//swap max 0,1
-					swap(max, 0, 1);
-				}
-				System.out.println(Arrays.toString(max));
+				
 			}
 		}
 		if (count == 0) {

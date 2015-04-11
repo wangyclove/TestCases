@@ -21,9 +21,11 @@ public class SeparateNumber {
 					sb.append(s.charAt(i));
 					i++;
 				}
+			} else {
+				sb.append(s.charAt(i));
+				sb.append(";");
 			}
-			sb.append(s.charAt(i));
-			sb.append(";");
+			
 		}
 		return sb.toString();
 	}

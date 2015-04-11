@@ -13,7 +13,7 @@ public class LargestSumSubArray {
 	
 	public static int[] findLargestSumSubArrayIn(int[] sample) {
 		// return error message if the input arry's length is less than 2;
-		// return the sample arry if the input array's length is 2;
+		// return the sample array if the input array's length is 2;
 		
 		int[] maxCache = new int[sample.length];
 		maxCache[0] = Integer.MIN_VALUE;

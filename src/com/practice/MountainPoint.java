@@ -15,12 +15,12 @@ public class MountainPoint {
 	
 	public static void findMountain(int[][] board) {
 		for (int i = 1; i <board.length - 1; i++) {
-			for (int j = 1; j < board[0].length; j++) {
+			for (int j = 1; j < board[0].length - 1; j++) {
 				if (board[i][j] > board[i - 1][j] && board[i][j] > board[i - 1][j - 1] && board[i][j] > board[i - 1][j + 1] &&
 				board[i][j] > board[i][j - 1] && board[i][j] > board[i][j + 1] && board[i][j] > board[i + 1][j] &&
 				board[i][j] > board[i + 1][j] && board[i][j] > board[i + 1][j - 1]) {
 					System.out.println(board[i][j]);
-					i++;
+					j++;
 				}
 			}
 		}

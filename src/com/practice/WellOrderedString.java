@@ -3,7 +3,7 @@ package com.practice;
 
 public class WellOrderedString {
 	public static void main(String[] args) {
-		int n = 3;
+		int n = 2;
 		StringBuilder sb = new StringBuilder();
 		if (n > 26) {
 			System.out.println("Please enter another valid number");
@@ -11,7 +11,7 @@ public class WellOrderedString {
 		
 		System.out.println((int)'a' + " " + (int)'z' + " " + (int)'A' + " " + (int)'Z');
 		System.out.println((char)('a'-32));
-		generateWOS(n, 'a', sb);
+		generateWOS(n, 0, "");
 	}
 	
 	//generate WellOrderedString
@@ -31,5 +31,18 @@ public class WellOrderedString {
 													//not (char)c+32 or sth
 			sb.deleteCharAt(sb.length() - 1);
 		}
+	}
+	
+	public static void generateWOS(int n, int start, String pre) {
+		if (n == 0) {
+			System.out.println(pre);
+			return;
+		}
+		
+		for (int i = start; i < 26; i++) {
+			generateWOS(n - 1, i + 1, pre + (char)('a' + i));
+			generateWOS(n - 1, i + 1, pre + (char)('A' + i));
+		}
+		
 	}
 }

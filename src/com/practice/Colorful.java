@@ -36,12 +36,12 @@ public class Colorful {
 				if(!set.contains(product)) {
 					set.add(product);
 				} else {
+					System.out.println();
 					return false;
 				}
 			}
 		}
-		
-		
+		System.out.println();
 		return true;
 	}
 }
